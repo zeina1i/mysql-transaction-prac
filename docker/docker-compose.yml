@@ -1,0 +1,18 @@
+version: '3.0'
+
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'txprac'
+      MYSQL_USER: 'txprac_user'
+      MYSQL_PASSWORD: 'txprac'
+      MYSQL_ROOT_PASSWORD: 'txprac'
+    ports:
+      - '6036:3306'
+    volumes:
+      - txprac-db:/var/lib/mysql
+
+volumes:
+  txprac-db:
